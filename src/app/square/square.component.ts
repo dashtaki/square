@@ -15,4 +15,16 @@ export class SquareComponent {
       .getPosts()
       .subscribe((posts: IPost[]) => (this.posts = posts));
   }
+
+  public isBreakable(index: number): boolean {
+    return index % 10 === 0 && index !== 0;
+  }
+
+  public trackByFn(index: number): number {
+    return index;
+  }
+
+  public toggleIds(e): void {
+    e.target.parentElement.classList.toggle('show__user-id');
+  }
 }
