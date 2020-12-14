@@ -1,0 +1,7 @@
+<span
+  [class.break]="tileService.isBreakable(post.id)"
+  (click)="tileService.toggleIds($event)"
+>
+  <span class="square">{{ post.id }}</span>
+  <span class="square">{{ post.userId }}</span>
+</span>
