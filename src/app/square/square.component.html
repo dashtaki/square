@@ -1,1 +1,8 @@
-<p>square works!</p>
+<div>
+  <span
+    *ngFor="let post of posts; let i = index"
+    [class.break]="i % 10 === 0 && i !== 0"
+  >
+    <span class="square">{{ post.id }}</span>
+  </span>
+</div>
