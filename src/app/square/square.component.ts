@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { SquareService } from './service/square.service';
 import { IPost } from '../interface/IPost';
+import { Store } from '@ngrx/store';
 import { SpinnerService } from '../spinner/service/spinner.service';
+import * as fromRoot from '../ngrx/index';
+import * as squareActions from './store/square-action';
 
 @Component({
   selector: 'app-square',
@@ -12,16 +14,19 @@ export class SquareComponent {
   public posts: IPost[] = [];
 
   constructor(
-    private squareService: SquareService,
-    private spinnerService: SpinnerService
+    private spinnerService: SpinnerService,
+    private store: Store<fromRoot.State>
   ) {
     this.fetchAllPosts();
   }
 
   private fetchAllPosts(): void {
     this.spinnerService.showSpinner();
-    this.squareService.getPosts().subscribe((posts: IPost[]) => {
-      this.posts = posts;
+    this.store.dispatch(new squareActions.PostsAction());
+    this.store.select(fromRoot.getSquare).subscribe((posts: IPost[]) => {
+      if (posts) {
+        this.posts = posts;
+      }
       this.spinnerService.hideSpinner();
     });
   }
