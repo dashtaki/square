@@ -21,12 +21,12 @@ $default-color: rgb(43, 160, 199);
   }
 }
 
-.cssload-thecube {
+.spinner__main-cube {
   width: 50px;
   height: 50px;
   z-index: 2;
 
-  .cssload-cube {
+  .spinner__cube {
     position: relative;
     float: left;
     width: 50%;
@@ -45,10 +45,10 @@ $default-color: rgb(43, 160, 199);
       width: 100%;
       height: 100%;
       background-color: $primary-color;
-      animation: cssload-fold-thecube 2.76s infinite linear both;
-      -o-animation: cssload-fold-thecube 2.76s infinite linear both;
-      -webkit-animation: cssload-fold-thecube 2.76s infinite linear both;
-      -moz-animation: cssload-fold-thecube 2.76s infinite linear both;
+      animation: spinner-fold-cube 2.76s infinite linear both;
+      -o-animation: spinner-fold-cube 2.76s infinite linear both;
+      -webkit-animation: spinner-fold-cube 2.76s infinite linear both;
+      -moz-animation: spinner-fold-cube 2.76s infinite linear both;
       transform-origin: 100% 100%;
       -o-transform-origin: 100% 100%;
       -ms-transform-origin: 100% 100%;
@@ -56,11 +56,11 @@ $default-color: rgb(43, 160, 199);
       -moz-transform-origin: 100% 100%;
     }
 
-    &.cssload-c1:before {
+    &.spinner__cube-1:before {
       background-size: contain;
     }
 
-    &.cssload-c2 {
+    &.spinner__cube-2 {
       transform: scale(1.1) rotateZ(90deg);
       -o-transform: scale(1.1) rotateZ(90deg);
       -ms-transform: scale(1.1) rotateZ(90deg);
@@ -76,7 +76,7 @@ $default-color: rgb(43, 160, 199);
       }
     }
 
-    &.cssload-c3 {
+    &.spinner__cube-3 {
       transform: scale(1.1) rotateZ(180deg);
       -o-transform: scale(1.1) rotateZ(180deg);
       -ms-transform: scale(1.1) rotateZ(180deg);
@@ -92,7 +92,7 @@ $default-color: rgb(43, 160, 199);
       }
     }
 
-    &.cssload-c4 {
+    &.spinner__cube-4 {
       transform: scale(1.1) rotateZ(270deg);
       -o-transform: scale(1.1) rotateZ(270deg);
       -ms-transform: scale(1.1) rotateZ(270deg);
@@ -110,15 +110,7 @@ $default-color: rgb(43, 160, 199);
   }
 }
 
-.cssload-text {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-  font-size: 0.8rem;
-  color: $default-color;
-}
-
-@keyframes cssload-fold-thecube {
+@keyframes spinner-fold-cube {
   0%,
   10% {
     transform: perspective(136px) rotateX(-180deg);
@@ -136,7 +128,7 @@ $default-color: rgb(43, 160, 199);
   }
 }
 
-@-o-keyframes cssload-fold-thecube {
+@-o-keyframes spinner-fold-cube {
   0%,
   10% {
     -o-transform: perspective(136px) rotateX(-180deg);
@@ -154,7 +146,7 @@ $default-color: rgb(43, 160, 199);
   }
 }
 
-@-ms-keyframes cssload-fold-thecube {
+@-ms-keyframes spinner-fold-cube {
   0%,
   10% {
     -ms-transform: perspective(136px) rotateX(-180deg);
@@ -172,7 +164,7 @@ $default-color: rgb(43, 160, 199);
   }
 }
 
-@-webkit-keyframes cssload-fold-thecube {
+@-webkit-keyframes spinner-fold-cube {
   0%,
   10% {
     -webkit-transform: perspective(136px) rotateX(-180deg);
@@ -190,7 +182,7 @@ $default-color: rgb(43, 160, 199);
   }
 }
 
-@-moz-keyframes cssload-fold-thecube {
+@-moz-keyframes spinner-fold-cube {
   0%,
   10% {
     -moz-transform: perspective(136px) rotateX(-180deg);
