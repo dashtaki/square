@@ -5,35 +5,36 @@ import {
   TestBed,
 } from '@angular/core/testing';
 import { SquareComponent } from './square.component';
-import { SquareService } from './service/square.service';
-import { IPost } from '../interface/IPost';
-import { of } from 'rxjs';
 import { SpinnerService } from '../spinner/service/spinner.service';
 import { By } from '@angular/platform-browser';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { TileComponent } from '../tile/tile.component';
+import { Store, StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from '../ngrx';
+import { IPost } from '../interface/IPost';
+import { of } from 'rxjs';
 
 describe('SquareComponent', () => {
   let component: SquareComponent;
   let fixture: ComponentFixture<SquareComponent>;
-  let mockSquareService;
   let mockSpinnerService;
+  let mockStore;
 
   beforeEach(async () => {
-    mockSquareService = jasmine.createSpyObj(['getPosts']);
+    mockSpinnerService = jasmine.createSpyObj(['showSpinner', 'hideSpinner']);
+    mockStore = jasmine.createSpyObj(['select', 'dispatch']);
     const mockPost: IPost[] = [
       { id: 0, userId: 1, body: 'body-1', title: 'title-1' },
       { id: 1, userId: 2, body: 'body-2', title: 'title-2' },
     ];
-    mockSquareService.getPosts.and.returnValue(of(mockPost));
-
-    mockSpinnerService = jasmine.createSpyObj(['showSpinner', 'hideSpinner']);
+    mockStore.select.and.returnValue(of(mockPost));
 
     await TestBed.configureTestingModule({
       declarations: [SquareComponent, SpinnerComponent, TileComponent],
+      imports: [StoreModule.forRoot(reducers, { metaReducers })],
       providers: [
-        { provide: SquareService, useValue: mockSquareService },
         { provide: SpinnerService, useValue: mockSpinnerService },
+        { provide: Store, useValue: mockStore },
       ],
     }).compileComponents();
   });
@@ -46,6 +47,7 @@ describe('SquareComponent', () => {
 
   it('should create', fakeAsync(() => {
     flush();
+
     expect(component).toBeTruthy();
     expect(mockSpinnerService.showSpinner).toHaveBeenCalled();
     expect(mockSpinnerService.hideSpinner).toHaveBeenCalled();
@@ -57,9 +59,10 @@ describe('SquareComponent', () => {
     expect(header.nativeElement.textContent).toContain('SQUARE TABLE');
   });
 
-  it('should all posts', () => {
+  it('should all posts', fakeAsync(() => {
     const tiles = fixture.debugElement.queryAll(By.css('app-tile'));
+    flush();
 
     expect(tiles.length).toBe(2);
-  });
+  }));
 });
