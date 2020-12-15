@@ -5,4 +5,11 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
+}
+
+.header {
+  font-family: OpenSans-Bold, Arial, Helvetica, sans-serif;
+  color: $primary-color;
+  font-size: 2rem;
 }
