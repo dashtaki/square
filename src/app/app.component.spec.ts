@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 class MockSquareComponent {}
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AppComponent, MockSquareComponent],
