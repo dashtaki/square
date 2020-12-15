@@ -10,6 +10,8 @@ import { IPost } from '../interface/IPost';
 import { of } from 'rxjs';
 import { SpinnerService } from '../spinner/service/spinner.service';
 import { By } from '@angular/platform-browser';
+import { SpinnerComponent } from '../spinner/spinner.component';
+import { TileComponent } from '../tile/tile.component';
 
 describe('SquareComponent', () => {
   let component: SquareComponent;
@@ -28,7 +30,7 @@ describe('SquareComponent', () => {
     mockSpinnerService = jasmine.createSpyObj(['showSpinner', 'hideSpinner']);
 
     await TestBed.configureTestingModule({
-      declarations: [SquareComponent],
+      declarations: [SquareComponent, SpinnerComponent, TileComponent],
       providers: [
         { provide: SquareService, useValue: mockSquareService },
         { provide: SpinnerService, useValue: mockSpinnerService },
