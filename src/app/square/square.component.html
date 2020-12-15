@@ -1,6 +1,8 @@
-<div>
-  <app-tile
-    [post]="post"
-    *ngFor="let post of posts; trackBy: trackByFn"
-  ></app-tile>
-</div>
+<section class="main__wrapper">
+  <div>
+    <app-tile
+      [post]="post"
+      *ngFor="let post of posts; trackBy: trackByFn"
+    ></app-tile>
+  </div>
+</section>

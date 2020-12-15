@@ -1,9 +1,12 @@
+@import "src/assets/variables";
+
 .break::before {
   content: "\a";
   white-space: pre;
 }
 
 .square {
+  font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
   margin: 2px;
   width: 50px;
   height: 50px;
@@ -12,8 +15,12 @@
   align-items: center;
   border: 1px solid gray;
   cursor: pointer;
+  background-color: $primary-color;
+  border-radius: 4px;
+  color: white;
 
   &:nth-child(2) {
+    background-color: $secondary-color;
     display: none;
   }
 }
