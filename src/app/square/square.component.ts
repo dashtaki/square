@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { IPost } from '../interface/IPost';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../ngrx/index';
+import { SubSink } from 'subsink';
 import * as squareActions from './store/action/square-action';
 
 @Component({
@@ -9,8 +10,9 @@ import * as squareActions from './store/action/square-action';
   templateUrl: './square.component.html',
   styleUrls: ['./square.component.scss'],
 })
-export class SquareComponent {
+export class SquareComponent implements OnDestroy {
   public posts: IPost[] = [];
+  private _subs = new SubSink();
 
   constructor(private store: Store<fromRoot.State>) {
     this.fetchAllPosts();
@@ -27,5 +29,9 @@ export class SquareComponent {
 
   public trackByFn(index: number): number {
     return index;
+  }
+
+  ngOnDestroy(): void {
+    this._subs.unsubscribe();
   }
 }
