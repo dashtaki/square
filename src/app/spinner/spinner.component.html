@@ -1,4 +1,4 @@
-<div class="spinner__wrapper" *ngIf="spinnerService.loading">
+<div class="spinner__wrapper" *ngIf="spinnerService.loading | async">
   <div class="spinner__main-cube">
     <div class="spinner__cube spinner__cube-1"></div>
     <div class="spinner__cube spinner__cube-2"></div>
