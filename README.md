@@ -46,17 +46,20 @@ These are also [Prettier](https://prettier.io/) scripts:
 
 ## Code scaffolding
 
-####Testing
+#### Testing
+
 I have written test(unit test for services and functional tests for components) in `master` branch.
 I also have written tests for Ngrx in `feature/ngrx` branch.
 
-####Prettier
+#### Prettier
+
 Using [Prettier](https://prettier.io/) for opinionated code formatter.
 It will take care of formatting for you. 
 Prettier creates an abstract syntax tree from your code and uses it to write new code formatted according to a set of rules.
 In addition, I check pretty before every commit by add a pre-commit hook. For more detail check package.json, husky section.
 
-####Ngrx
+#### Ngrx
+
 There is another version of application, with RxJs shared-state however in both cases I tried to write unit tests for services and functional tests for component by Jasmine.
 Please check it out the .spec files.
 There is a branch named feature/ngrx that I create a shared state by Ngrx and try to fetch data(Calling API) by ngrx/efffect.
@@ -64,12 +67,14 @@ You can see the changes regarding using RxJs shared-state:
 <br />
 `git checkout feature/ngrx`
 
-####BEM
+#### BEM
+
 Use [BEM](http://getbem.com/introduction/) as CSS naming methodology and naming convention for writing cleaner and more readable CSS classes.
  BEM also aims to write independent CSS blocks in order to reuse them later in your project.
 That’s what I preferred to don’t use Bootstrap as a CSS framework and one more reason was it is a small project that it can be handled without any CSS framework.
 
-####Spinner
+#### Spinner
+
 I have created a component as Spinner for showing a loader while fetching data from server, in this case jasonplaceholder,
 Most of the time jsonplaceholder is fast in terms of response, then I tried to simulate latency for API.
 For simulation you need to:
@@ -78,7 +83,8 @@ For simulation you need to:
 2. in `src/app/square/store/effect/square-effect.ts` un-comment line:20 `debounceTime(3000)`
 3. `npm start`
 
-####Branching
+#### Branching
+
 There are three branches that you can check it out by run
 `git branch`
 
@@ -86,12 +92,14 @@ There are three branches that you can check it out by run
 2. `feature/ngrx` - shared state supported
 3. `main` - the same as `master`
 
-####Services
+#### Services
+
 As you can see, I tried to move all the logic to services.
 I think moving the logic to the service can improve testability and readability,
 also it will decrease the complexity in component. I addition, it will really help to modularity of the project.
 
-####In-code Documentation
+#### In-code Documentation
+
 Good code does not need documentation however
 I tried to make some documentation in code because I had time :)
 Every service create has a unique API to it.
