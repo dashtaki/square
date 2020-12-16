@@ -10,7 +10,7 @@ import { metaReducers, reducers } from './ngrx';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { SquareEffect } from './square/store/square-effect';
+import { SquareEffect } from './square/store/effect/square-effect';
 
 const DECLARATIONS = [
   AppComponent,
