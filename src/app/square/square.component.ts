@@ -3,7 +3,7 @@ import { IPost } from '../interface/IPost';
 import { Store } from '@ngrx/store';
 import { SpinnerService } from '../spinner/service/spinner.service';
 import * as fromRoot from '../ngrx/index';
-import * as squareActions from './store/square-action';
+import * as squareActions from './store/action/square-action';
 
 @Component({
   selector: 'app-square',

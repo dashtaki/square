@@ -1,4 +1,4 @@
-import * as squareActions from '../square-action';
+import * as squareActions from '../action/square-action';
 import { IPost } from '../../../interface/IPost';
 
 export interface State {

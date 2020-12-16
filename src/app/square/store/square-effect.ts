@@ -3,7 +3,7 @@ import { SquareService } from '../service/square.service';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
 import { IPost } from '../../interface/IPost';
-import * as squareActions from './square-action';
+import * as squareActions from './action/square-action';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { Action } from '@ngrx/store';
 
