@@ -92,6 +92,50 @@ There are three branches that you can check it out by run
 2. `feature/ngrx` - shared state supported
 3. `main` - the same as `master`
 
+#### Directories structure
+
+I tried to make my folder structure as domain base,
+I mean in most cases you can see the folder structure is like:
+
+- src
+  - app
+    - components
+      - header
+      - dashboard
+    - services
+      - user
+      - login
+    - pipes
+    - directive
+    - ...
+  - store
+    - actions
+    - reducers
+    - effects
+
+But, I try to categorized it as based on domains that we have, for instance:
+
+- src
+  - app
+  - header
+    - service
+    - pipe
+    - store
+      - action
+      - reducer
+      - effect
+    - user
+      - service
+        - pipe
+        - directive
+        - store
+          - action
+          - reducer
+          - effect
+    - login
+      - ...
+  - ...
+
 #### Services
 
 As you can see, I tried to move all the logic to services.
