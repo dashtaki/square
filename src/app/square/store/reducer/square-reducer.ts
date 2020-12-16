@@ -1,5 +1,5 @@
-import * as squareActions from './square-action';
-import { IPost } from '../../interface/IPost';
+import * as squareActions from '../square-action';
+import { IPost } from '../../../interface/IPost';
 
 export interface State {
   posts: IPost[];
@@ -7,7 +7,7 @@ export interface State {
   loading: boolean;
 }
 
-const initialState: State = {
+export const initialState: State = {
   posts: [],
   error: null,
   loading: false,

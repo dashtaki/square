@@ -1,5 +1,5 @@
 import { ActionReducerMap, createSelector, MetaReducer } from '@ngrx/store';
-import * as fromSquare from '../square/store/square-reducer';
+import * as fromSquare from '../square/store/reducer/square-reducer';
 import { environment } from '../../environments/environment.prod';
 
 export interface State {
