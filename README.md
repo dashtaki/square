@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-# square
-
-=======
-
 # Square
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
@@ -110,5 +104,3 @@ like [ng-swagger-gen](https://www.npmjs.com/package/ng-swagger-gen).
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-> > > > > > > 4c2d838a6612aa058bd7dc060223fc677c31ea17
